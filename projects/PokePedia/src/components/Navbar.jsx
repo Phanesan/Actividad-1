@@ -18,14 +18,14 @@ export default function NavBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar sx={{height:"80px", gap:"30px"}}>
-            <Icon src='/icons/icon.png' alt='MinecraftPedia' sx={{display: {xs:'none', sm:'block'}}}></Icon>
+            <Icon src='/icons/icon.png' alt='PokePedia' sx={{display: {xs:'none', sm:'block'}}}></Icon>
             <Typography
                 variant="h6"
                 noWrap
                 component="div"
                 sx={{ flexGrow: 1, display: 'block' }}
             >
-                MinecraftPedia
+                PokePedia
             </Typography>
         </Toolbar>
       </AppBar>
