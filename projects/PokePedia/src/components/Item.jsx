@@ -5,29 +5,21 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-export default function Item({initImg,initName,initDescription,initMaxStack,initRenewable}) {
+export default function Item({initImg,initName,initDescription}) {
+  //console.log(initImg);
   return (
-    <Card sx={{ maxWidth: 245 , backgroundColor:"#1a1a1a"}}>
-      <CardActionArea>
+    <Card sx={{backgroundColor:"#1a1a1a", display:'flex', flexDirection:'column', justifyContent:'center'}}>
+      <CardActionArea sx={{maxWidth:"260px",maxHeight:"330px",padding:"10px"}} onClick={() => console.log("TEST")}>
         <CardMedia
           component="img"
-          height="80"
+          height="220"
           image={initImg}
           alt={initName}
-          sx={{objectFit:'contain', objectPosition:'center', margin:"10px"}}
+          sx={{objectFit:'contain', objectPosition:'center', justifyContent:'center', marginBottom:"10px"}}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" color="white">
+          <Typography textAlign="center" gutterBottom variant="h5" component="div" color="white" sx={{display:'flex', justifyContent:"center"}}>
             {initName}
-          </Typography>
-          <Typography variant="body2" color="white">
-            {initDescription}<br/><br/>
-          </Typography>
-          <Typography variant="body2" color="white">
-            Max stacks: {initMaxStack}
-          </Typography>
-          <Typography variant="body2" color="white">
-            Renewable: {initRenewable ? 'Yes':'No'}
           </Typography>
         </CardContent>
       </CardActionArea>
