@@ -16,7 +16,7 @@ const Icon = styled("img")(({
 export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor:'#650000' }}>
         <Toolbar sx={{height:"80px", gap:"30px"}}>
             <Icon src='/icons/icon.png' alt='PokePedia' sx={{display: {xs:'none', sm:'block'}}}></Icon>
             <Typography
