@@ -9,6 +9,7 @@ import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import { Container } from "@mui/material";
+import { useState } from "react";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -43,7 +44,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function SearchBar() {
+export default function SearchBar({SearchData}) {
+
+  const {valueSearch, setValueSearch} = useState();
+
+  const handleSearch = (event) => {
+    SearchData(event.target.value);
+  }
+
   return (
     <Container className="bar" sx={{width:{xs:'300px', sm:'400px', md:'500px'}}}>
       <Search>
@@ -51,8 +59,10 @@ export default function SearchBar() {
           <SearchIcon />
         </SearchIconWrapper>
         <StyledInputBase
-          placeholder="Search…"
+          placeholder="Buscar…"
           inputProps={{ "aria-label": "search" }}
+          value={valueSearch}
+          onChange={handleSearch}
         />
       </Search>
     </Container>
